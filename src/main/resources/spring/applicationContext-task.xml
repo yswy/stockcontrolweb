@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd"
+		default-lazy-init="true">
+		
+		
+	<!-- ======================== Spring任务调度 ======================== -->
+	<!--   定时扫描更新在线用户状态   -->
+	<bean id="updateUserStatusJobMethod" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="onlineUserServiceImpl" />
+		</property>
+		<property name="targetMethod">	<!-- 要执行的方法名称 -->
+			<value>updateUserStatus</value>
+		</property>
+	</bean>
+
+	<bean id="updateUserStatusJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="updateUserStatusJobMethod"></property>
+		<property name="cronExpression" value="0 0/5 * * * ?"></property> <!-- 每五分钟触发一次 -->
+	</bean>
+	
+	<!--           调度工厂       -->
+	<bean id="SpringJobSchedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="updateUserStatusJobTrigger" />
+			</list>
+		</property>
+	</bean>
+</beans>

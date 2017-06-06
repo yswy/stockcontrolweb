@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">  
+    
+    
+<!-- service 缓存配置 -->
+<!-- 组织信息缓存 -->
+<cache name="orgCache"
+	eternal="true"
+    maxElementsInMemory="10000"
+    overflowToDisk="false"
+    diskPersistent="false"
+    timeToIdleSeconds="36000"
+    timeToLiveSeconds="36000"
+    memoryStoreEvictionPolicy="LRU" />
+<!-- 菜单信息缓存 -->
+<cache name="resourrceCache"
+	eternal="false"
+    maxElementsInMemory="10000"
+    overflowToDisk="false"
+    diskPersistent="false"
+    timeToIdleSeconds="36000"
+    timeToLiveSeconds="36000"
+    memoryStoreEvictionPolicy="LRU" />   
+</ehcache>
+
+
+<!-- eternal-是否永久有效 
+	 maxElementsInMemory-内存缓存中最多可以存放的元素数量
+	 overflowToDisk-将Cache中多出的元素放入磁盘文件中
+	 diskPersistent="false"-是否持久化磁盘缓存
+	 timeToIdleSeconds-缓存数据在失效前的允许闲置时间(单位:秒)
+	 timeToLiveSeconds-缓存数据在失效前的允许存活时间(单位:秒)
+	 memoryStoreEvictionPolicy-当达到maxElementsInMemory 限制时，Ehcache 将会根据指定的策略去清理内存。LRU （最近最少使用）、FIFO （先进先出）、LFU （较少使用）
+-->
