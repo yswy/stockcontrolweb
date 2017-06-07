@@ -41,7 +41,7 @@
 	</servlet-mapping>
 
 	<welcome-file-list>
-		<welcome-file>index.vm</welcome-file>
+		<welcome-file>index.htm</welcome-file>
 	</welcome-file-list>
 	<!-- session失效时间 -->
 	<session-config>
