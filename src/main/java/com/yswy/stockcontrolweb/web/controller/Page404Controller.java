@@ -2,7 +2,7 @@
  * BenchCode.com Inc.
  * Copyright (c) 2005-2009 All Rights Reserved.
  */
-package com.yswy.stockcontrol.web.controller;
+package com.yswy.stockcontrolweb.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
