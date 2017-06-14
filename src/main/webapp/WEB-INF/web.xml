@@ -8,14 +8,6 @@
 		<param-name>webAppRootKey</param-name>
 		<param-value>article.root</param-value>
 	</context-param>
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>
-			classpath:spring/spring-mvc.xml
-			classpath:spring/applicationContext*.xml
-		</param-value>
-	</context-param>
-  
 	<!--地址 -->
 	<servlet-mapping>
 		<servlet-name>SMVCServlet</servlet-name>
@@ -30,7 +22,7 @@
 		</init-param>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:spring/spring-mvc.xml</param-value>
+			<param-value>classpath:spring/spring-*.xml</param-value>
 		</init-param>
 		
 		<load-on-startup>1</load-on-startup>
@@ -97,5 +89,6 @@
 		<error-code>503</error-code>
 		<location>/error.htm</location>
 	</error-page>
+	
 </web-app>
 

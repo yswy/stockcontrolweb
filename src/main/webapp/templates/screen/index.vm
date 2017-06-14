@@ -1,5 +1,7 @@
 <html>
 <body>
-<h2>screen_123123123123$test</h2>
+<h2>screen_123123123123$test</h2><br>
+	$list.size()<br>
+	$list
 </body>
 </html>
