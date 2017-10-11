@@ -1,0 +1,64 @@
+#set($dbTable=$benchConfig.dbTableMap.get($table.sqlName))
+	public static final String TABLE_NAME = "$stringUtils.toUpperCase($table.sqlName)";
+	//===========column onstants=====
+#foreach($column in $table.columns) 
+#set($dbColumn=$dbTable.columnMap.get($column.sqlName))
+	/**
+	 * This constant corresponds to db column <tt>${column.sqlName}</tt>.<br> 
+     */
+	 public static final String COLUMN_$!{column.sqlName} = "$!column.sqlName";
+#end
+	
+	//========== properties ==========
+
+#foreach($column in $table.columns) 
+#set($dbColumn=$dbTable.columnMap.get($column.sqlName))
+	/**
+	 * This property corresponds to db column <tt>${column.sqlName}</tt>.<br>
+     * $!dbColumn.comments
+     */
+#if ($column.simpleJavaType == "Money")
+	private Money $column.variableName = new Money(0, 0);
+#elseif ($column.simpleJavaType == "RMBMoney")
+	private RMBMoney $column.variableName = new RMBMoney(0, 0, 0, 0);
+#else
+	private $column.simpleJavaType $column.variableName#if($column.hasDefaultValue())$column.getDefaultValueSet()#end;
+#end
+	
+#end
+
+    //========== getters and setters ==========
+#foreach($column in $table.columns) 
+
+    /**
+     * Getter method for property <tt>$column.variableName</tt>.
+     *
+     * @return property value of $column.variableName
+     */
+	public $column.simpleJavaType ${column.getterName}() {
+		return $column.variableName;
+	}
+	
+	/**
+	 * Setter method for property <tt>$column.variableName</tt>.
+	 * 
+	 * @param $column.variableName value to be assigned to property $column.variableName
+     */
+	public void ${column.setterName}($column.simpleJavaType $column.variableName) {
+#if ($column.simpleJavaType == "Money")
+		if ($column.variableName == null) {
+			this.$column.variableName = new Money(0, 0);
+		} else {
+			this.$column.variableName = $column.variableName;
+		}
+#elseif ($column.simpleJavaType == "RMBMoney")
+		if ($column.variableName == null) {
+			this.$column.variableName = new RMBMoney(0, 0, 0, 0);
+		} else {
+			this.$column.variableName = $column.variableName;
+		}
+#else
+		this.$column.variableName = $column.variableName;
+#end	
+	}
+#end

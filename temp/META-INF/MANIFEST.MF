@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: zuoer
+Build-Jdk: 1.7.0_79
+Bundle-ManifestVersion: 1
+Bundle-Name: Bench Gen Ibator
+Bundle-SymbolicName: com.bench.gen.ibator;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Vendor: Bench
+

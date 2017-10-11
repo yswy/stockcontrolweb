@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" "http://static-support.config.net/dtd/ibatis/sql-map-config-2.dtd">
+<sqlMapConfig>
+    <settings cacheModelsEnabled="true" enhancementEnabled="false" lazyLoadingEnabled="false" maxRequests="3000" maxSessions="3000" maxTransactions="3000" useStatementNamespaces="false"/>
+#if(!$stringUtils.isEmpty($fileproducer.comment))
+	<!-- ${fileproducer.comment}  -->
+#end
+#if($fileproducer.includeCommonSqlMappingFile)   
+	<sqlMap resource="${middlegen.sqlmapFileDir}/common-sqlmap-mapping.xml"/>
+#end
+#if($fileproducer.includeOtherSqlMappingFiles)
+#foreach($includeSqlMappingFile in $stringUtils.split($fileproducer.includeOtherSqlMappingFiles,','))
+	<sqlMap resource="$includeSqlMappingFile"/>
+#end
+#end
+#foreach ($table in $plugin.sortedTables)
+#if($stringUtils.isEmpty($table.tableConfig.getSqlMapConfigFileName()) ||  $stringUtils.equals($filenameUtils.getName($fileproducer.filename),$table.tableConfig.getSqlMapConfigFileName()))
+	<sqlMap resource="${table.tableConfig.sqlMapFileDir}/${table.baseClassName}-sqlmap-mapping.xml"/>
+#end
+#end
+
+
+</sqlMapConfig>

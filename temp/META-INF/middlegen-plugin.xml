@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<middlegen>
+	<plugin name="bench" class-name="middlegen.plugins.bench.BenchPlugin"
+		version="20170824" />
+</middlegen>
