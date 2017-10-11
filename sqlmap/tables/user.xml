@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GBK"?>
+<table sqlname="user">
+	<operation name="insert">
+		<sql>
+			insert into user
+ 			 (id, user_id, user_name)
+			values
+  			(?, ?, ?)
+		</sql>
+	</operation>
+	
+	<operation name="selectAll" multiplicity="many">
+		<sql>
+			select 
+			id, user_id, user_name
+			from 
+			user
+		</sql>
+	</operation>
+	
+	<operation name="selectByUserId"  >
+		<sql>
+			select 
+			id, user_id, user_name
+			from 
+			user where user_id=?
+		</sql>
+	</operation>
+</table>

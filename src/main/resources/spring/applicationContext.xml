@@ -29,7 +29,7 @@
 	</bean>
 	
 	<!-- 自动扫描的包名 （只扫描service下，用于事务回滚）-->
-	<context:component-scan base-package="com.yswy.*"/>
+	<context:component-scan base-package="com.bench.app.*"/>
 	<!-- 连接池 -->
     <bean id="parentDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
     	<property name="maxActive" value="${parentDataSource.maxActive}" />	<!-- 最大活动连接  -->

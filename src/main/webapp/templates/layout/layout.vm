@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">	
 	<title>admol</title>
+	<script src="js/test.js"></script>
 </head>
 <body class="warp">
 	<div class="container">

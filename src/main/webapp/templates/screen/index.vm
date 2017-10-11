@@ -3,5 +3,12 @@
 <h2>screen_123123123123$test</h2><br>
 	$list.size()<br>
 	$list
+	<input type="button" id="video" value="开始录像">
 </body>
 </html>
+<script type="text/javascript">
+	
+    	jQuery("#video").click(function(){
+    					alert("test");
+    	});
+	</script>

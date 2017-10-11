@@ -22,7 +22,7 @@
 	<context:annotation-config />
 
 	<!-- 扫描包的路径 -->
-	<context:component-scan base-package="com.yswy"></context:component-scan>
+	<context:component-scan base-package="com.bench.app"></context:component-scan>
 	
 	<!-- 路径解析，增加默认前缀-->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/screen/" />
