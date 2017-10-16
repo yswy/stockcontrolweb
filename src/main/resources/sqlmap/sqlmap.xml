@@ -3,7 +3,11 @@
 <sqlMapConfig>
     <settings cacheModelsEnabled="true" enhancementEnabled="false" lazyLoadingEnabled="false" maxRequests="3000" maxSessions="3000" maxTransactions="3000" useStatementNamespaces="false"/>
 	<sqlMap resource="sqlmap/common-sqlmap-mapping.xml"/>
-	<sqlMap resource="sqlmap/User-sqlmap-mapping.xml"/>
+	<sqlMap resource="sqlmap/Camera-sqlmap-mapping.xml"/>
+	<sqlMap resource="sqlmap/DisplayDataInfo-sqlmap-mapping.xml"/>
+	<sqlMap resource="sqlmap/DisplayInfo-sqlmap-mapping.xml"/>
+	<sqlMap resource="sqlmap/DisplayVideoInfo-sqlmap-mapping.xml"/>
+	<sqlMap resource="sqlmap/Group-sqlmap-mapping.xml"/>
 
 
 </sqlMapConfig>

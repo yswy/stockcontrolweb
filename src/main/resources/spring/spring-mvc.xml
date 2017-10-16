@@ -27,6 +27,12 @@
 	<!-- 路径解析，增加默认前缀-->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/screen/" />
 	
+	<mvc:annotation-driven />
+	<mvc:resources location="/images/" mapping="/images/**"></mvc:resources>  
+    <mvc:resources location="/fonts/" mapping="/fonts/**"></mvc:resources>  
+    <mvc:resources location="/css/" mapping="/css/**"></mvc:resources>  
+    <mvc:resources location="/js/" mapping="/js/**"></mvc:resources>  
+	
 	<!-- 配置velocity -->
 	<!-- velocity view config -->
 	<bean id="velocityViewResolver"

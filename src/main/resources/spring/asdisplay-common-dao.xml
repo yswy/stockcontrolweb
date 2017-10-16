@@ -12,7 +12,15 @@
     <!--  DAO���塣                                                               -->
     <!-- ======================================================================== -->
 
-    <bean id="userDAO" class="com.bench.app.asdisplay.common.dal.ibatis.IbatisUserDAO" parent="sqlMapClientDAO"/>
+    <bean id="cameraDAO" class="com.bench.app.asdisplay.common.dal.ibatis.IbatisCameraDAO" parent="sqlMapClientDAO"/>
+
+    <bean id="displayDataInfoDAO" class="com.bench.app.asdisplay.common.dal.ibatis.IbatisDisplayDataInfoDAO" parent="sqlMapClientDAO"/>
+
+    <bean id="displayInfoDAO" class="com.bench.app.asdisplay.common.dal.ibatis.IbatisDisplayInfoDAO" parent="sqlMapClientDAO"/>
+
+    <bean id="displayVideoInfoDAO" class="com.bench.app.asdisplay.common.dal.ibatis.IbatisDisplayVideoInfoDAO" parent="sqlMapClientDAO"/>
+
+    <bean id="groupDAO" class="com.bench.app.asdisplay.common.dal.ibatis.IbatisGroupDAO" parent="sqlMapClientDAO"/>
 
 	<bean id="seqDAO" class="com.bench.app.asdisplay.common.dal.ibatis.IbatisSeqDAO" parent="sqlMapClientDAO" />
 		

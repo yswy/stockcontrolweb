@@ -12,9 +12,9 @@
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"  
         destroy-method="close">  
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />  
-        <property name="url" value="jdbc:mysql://10.0.4.131:3306/test" />  
-        <property name="username" value="test" />  
-        <property name="password" value="yswy" />  
+        <property name="url" value="jdbc:mysql://10.0.4.131:3306/asdisplay" />  
+        <property name="username" value="asdisplay" />  
+        <property name="password" value="asdisplay" />  
         <!-- 初始化连接大小 -->  
         <property name="initialSize" value="10"></property>  
         <!-- 连接池最大数量 -->  
